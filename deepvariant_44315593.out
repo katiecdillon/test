@@ -1,0 +1,941 @@
+
+***** Intermediate results will be written to /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/output/intermediate_results_dir in docker. ****
+
+
+***** Running the command:*****
+time seq 0 15 | parallel -q --halt 2 --line-buffer /opt/deepvariant/bin/make_examples --mode calling --ref "/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta" --reads "/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam" --examples "/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/output/intermediate_results_dir/make_examples.tfrecord@16.gz" --checkpoint "/opt/models/ont_r104" --gvcf "/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/output/intermediate_results_dir/gvcf.tfrecord@16.gz" --task {}
+
+2026-04-14 23:19:15.829302: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-04-14 23:19:15.845570: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-04-14 23:19:15.842504: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-04-14 23:19:15.828336: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-04-14 23:19:15.828119: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-04-14 23:19:15.859721: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-04-14 23:19:15.752310: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-04-14 23:19:15.825303: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-04-14 23:19:15.842738: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-04-14 23:19:15.817166: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-04-14 23:19:15.828835: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-04-14 23:19:15.730272: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-04-14 23:19:15.913004: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-04-14 23:19:16.032744: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-04-14 23:19:16.075078: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-04-14 23:19:16.055140: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+/tmp/Bazel.runfiles_xtnvvoly/runfiles/absl_py/absl/flags/_validators.py:233: UserWarning: Flag --mode has a non-None default value; therefore, mark_flag_as_required will pass even if flag is not specified in the command line!
+  mark_flag_as_required(flag_name, flag_values)
+I0414 23:19:17.976045 22866734383104 make_examples_core.py:3773] model.example_info filename: /opt/models/ont_r104/model.example_info.json
+I0414 23:19:17.976332 22866734383104 make_examples_core.py:3777] Reading flags_for_calling from /opt/models/ont_r104/model.example_info.json
+I0414 23:19:17.976704 22866734383104 make_examples_core.py:3794] Flags for calling:
+alt_aligned_pileup: rows
+call_small_model_examples: True
+max_reads_per_partition: 600
+min_mapping_quality: 1
+parse_sam_aux_fields: True
+partition_size: 25000
+phase_reads: True
+pileup_image_height: 100
+pileup_image_width: 99
+realign_reads: False
+small_model_indel_gq_threshold: 17
+small_model_snp_gq_threshold: 9
+small_model_vaf_context_window_size: 51
+sort_by_haplotypes: True
+track_ref_reads: True
+trained_small_model_path: /opt/smallmodels/ont_r104
+trim_reads_for_pileup: True
+vsc_min_fraction_indels: 0.1
+vsc_min_fraction_snps: 0.1
+min_base_quality: 1
+[E::idx_find_and_load] Could not retrieve index file for '/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam'
+I0414 23:19:17.993618 22866734383104 genomics_reader.py:223] Reading /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam with NativeSamReader
+W0414 23:19:17.993771 22866734383104 make_examples_core.py:464] No non-empty sample name found in the input reads. DeepVariant will use default as the sample name. You can also provide a sample name with the --sample_name argument.
+I0414 23:19:17.998456 22866734383104 dv_utils.py:333] From /opt/models/ont_r104/model.example_info.json: Shape of input examples: [300, 99, 8], Channels of input examples: [1, 2, 3, 4, 5, 6, 7, 25].
+W0414 23:19:17.998725 22866734383104 make_examples_options.py:1187] --parse_sam_aux_fields is deprecated. 
+    HP is parsed if --phase_reads=False and --sort_by_haplotypes, --reverse_haplotypes, or --hp_tag_for_assembly_polishing are set.
+    HP is parsed if --phase_reads=False and the 'haplotype' channel is requested.
+    HP is parsed if --output_phasing_error_stats is set.
+    OQ is parsed if --use_original_quality_scores is set.
+    MM, ML, MN are parsed if the "base_methylation" channel is requested or
+    if --enable_methylation_calling or if --enable_methylation_aware_phasing
+    is set.
+
+I0414 23:19:17.998809 22866734383104 make_examples_options.py:1204] Parsing AUX Fields: []
+I0414 23:19:18.009075 22866734383104 make_examples_core.py:367] Task 10/16: Preparing inputs
+[E::fai_load3_core] Failed to open FASTA index /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai: No such file or directory
+Traceback (most recent call last):
+  File "/tmp/Bazel.runfiles_xtnvvoly/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 239, in <module>
+    app.run(main)
+  File "/tmp/Bazel.runfiles_xtnvvoly/runfiles/absl_py/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "/tmp/Bazel.runfiles_xtnvvoly/runfiles/absl_py/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "/tmp/Bazel.runfiles_xtnvvoly/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 229, in main
+    make_examples_core.make_examples_runner(options)
+  File "/tmp/Bazel.runfiles_xtnvvoly/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3412, in make_examples_runner
+    ) = processing_regions_from_options(options)
+  File "/tmp/Bazel.runfiles_xtnvvoly/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3299, in processing_regions_from_options
+    ref_contigs = fasta.IndexedFastaReader(
+  File "/tmp/Bazel.runfiles_xtnvvoly/runfiles/com_google_deepvariant/third_party/nucleus/io/fasta.py", line 106, in __init__
+    self._reader = reference.IndexedFastaReader.from_file(
+ValueError: NOT_FOUND: Failed to load FASTA file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta and/or index file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai. Please double check these files exist and are of the correct format.
+/tmp/Bazel.runfiles__dvjgtbe/runfiles/absl_py/absl/flags/_validators.py:233: UserWarning: Flag --mode has a non-None default value; therefore, mark_flag_as_required will pass even if flag is not specified in the command line!
+  mark_flag_as_required(flag_name, flag_values)
+I0414 23:19:17.954483 22412339118080 make_examples_core.py:3773] model.example_info filename: /opt/models/ont_r104/model.example_info.json
+I0414 23:19:17.954727 22412339118080 make_examples_core.py:3777] Reading flags_for_calling from /opt/models/ont_r104/model.example_info.json
+I0414 23:19:17.955470 22412339118080 make_examples_core.py:3794] Flags for calling:
+alt_aligned_pileup: rows
+call_small_model_examples: True
+max_reads_per_partition: 600
+min_mapping_quality: 1
+parse_sam_aux_fields: True
+partition_size: 25000
+phase_reads: True
+pileup_image_height: 100
+pileup_image_width: 99
+realign_reads: False
+small_model_indel_gq_threshold: 17
+small_model_snp_gq_threshold: 9
+small_model_vaf_context_window_size: 51
+sort_by_haplotypes: True
+track_ref_reads: True
+trained_small_model_path: /opt/smallmodels/ont_r104
+trim_reads_for_pileup: True
+vsc_min_fraction_indels: 0.1
+vsc_min_fraction_snps: 0.1
+min_base_quality: 1
+[E::idx_find_and_load] Could not retrieve index file for '/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam'
+I0414 23:19:17.972247 22412339118080 genomics_reader.py:223] Reading /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam with NativeSamReader
+W0414 23:19:17.972401 22412339118080 make_examples_core.py:464] No non-empty sample name found in the input reads. DeepVariant will use default as the sample name. You can also provide a sample name with the --sample_name argument.
+I0414 23:19:17.977211 22412339118080 dv_utils.py:333] From /opt/models/ont_r104/model.example_info.json: Shape of input examples: [300, 99, 8], Channels of input examples: [1, 2, 3, 4, 5, 6, 7, 25].
+W0414 23:19:17.977456 22412339118080 make_examples_options.py:1187] --parse_sam_aux_fields is deprecated. 
+    HP is parsed if --phase_reads=False and --sort_by_haplotypes, --reverse_haplotypes, or --hp_tag_for_assembly_polishing are set.
+    HP is parsed if --phase_reads=False and the 'haplotype' channel is requested.
+    HP is parsed if --output_phasing_error_stats is set.
+    OQ is parsed if --use_original_quality_scores is set.
+    MM, ML, MN are parsed if the "base_methylation" channel is requested or
+    if --enable_methylation_calling or if --enable_methylation_aware_phasing
+    is set.
+
+I0414 23:19:17.977525 22412339118080 make_examples_options.py:1204] Parsing AUX Fields: []
+I0414 23:19:17.987525 22412339118080 make_examples_core.py:367] Task 6/16: Preparing inputs
+[E::fai_load3_core] Failed to open FASTA index /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai: No such file or directory
+Traceback (most recent call last):
+  File "/tmp/Bazel.runfiles__dvjgtbe/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 239, in <module>
+    app.run(main)
+  File "/tmp/Bazel.runfiles__dvjgtbe/runfiles/absl_py/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "/tmp/Bazel.runfiles__dvjgtbe/runfiles/absl_py/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "/tmp/Bazel.runfiles__dvjgtbe/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 229, in main
+    make_examples_core.make_examples_runner(options)
+  File "/tmp/Bazel.runfiles__dvjgtbe/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3412, in make_examples_runner
+    ) = processing_regions_from_options(options)
+  File "/tmp/Bazel.runfiles__dvjgtbe/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3299, in processing_regions_from_options
+    ref_contigs = fasta.IndexedFastaReader(
+  File "/tmp/Bazel.runfiles__dvjgtbe/runfiles/com_google_deepvariant/third_party/nucleus/io/fasta.py", line 106, in __init__
+    self._reader = reference.IndexedFastaReader.from_file(
+ValueError: NOT_FOUND: Failed to load FASTA file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta and/or index file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai. Please double check these files exist and are of the correct format.
+/tmp/Bazel.runfiles_ey3u9qv2/runfiles/absl_py/absl/flags/_validators.py:233: UserWarning: Flag --mode has a non-None default value; therefore, mark_flag_as_required will pass even if flag is not specified in the command line!
+  mark_flag_as_required(flag_name, flag_values)
+I0414 23:19:17.996540 22398246154240 make_examples_core.py:3773] model.example_info filename: /opt/models/ont_r104/model.example_info.json
+I0414 23:19:17.996835 22398246154240 make_examples_core.py:3777] Reading flags_for_calling from /opt/models/ont_r104/model.example_info.json
+I0414 23:19:17.997171 22398246154240 make_examples_core.py:3794] Flags for calling:
+alt_aligned_pileup: rows
+call_small_model_examples: True
+max_reads_per_partition: 600
+min_mapping_quality: 1
+parse_sam_aux_fields: True
+partition_size: 25000
+phase_reads: True
+pileup_image_height: 100
+pileup_image_width: 99
+realign_reads: False
+small_model_indel_gq_threshold: 17
+small_model_snp_gq_threshold: 9
+small_model_vaf_context_window_size: 51
+sort_by_haplotypes: True
+track_ref_reads: True
+trained_small_model_path: /opt/smallmodels/ont_r104
+trim_reads_for_pileup: True
+vsc_min_fraction_indels: 0.1
+vsc_min_fraction_snps: 0.1
+min_base_quality: 1
+[E::idx_find_and_load] Could not retrieve index file for '/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam'
+I0414 23:19:18.014042 22398246154240 genomics_reader.py:223] Reading /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam with NativeSamReader
+W0414 23:19:18.014194 22398246154240 make_examples_core.py:464] No non-empty sample name found in the input reads. DeepVariant will use default as the sample name. You can also provide a sample name with the --sample_name argument.
+I0414 23:19:18.019948 22398246154240 dv_utils.py:333] From /opt/models/ont_r104/model.example_info.json: Shape of input examples: [300, 99, 8], Channels of input examples: [1, 2, 3, 4, 5, 6, 7, 25].
+W0414 23:19:18.020196 22398246154240 make_examples_options.py:1187] --parse_sam_aux_fields is deprecated. 
+    HP is parsed if --phase_reads=False and --sort_by_haplotypes, --reverse_haplotypes, or --hp_tag_for_assembly_polishing are set.
+    HP is parsed if --phase_reads=False and the 'haplotype' channel is requested.
+    HP is parsed if --output_phasing_error_stats is set.
+    OQ is parsed if --use_original_quality_scores is set.
+    MM, ML, MN are parsed if the "base_methylation" channel is requested or
+    if --enable_methylation_calling or if --enable_methylation_aware_phasing
+    is set.
+
+I0414 23:19:18.020266 22398246154240 make_examples_options.py:1204] Parsing AUX Fields: []
+I0414 23:19:18.030202 22398246154240 make_examples_core.py:367] Task 9/16: Preparing inputs
+[E::fai_load3_core] Failed to open FASTA index /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai: No such file or directory
+Traceback (most recent call last):
+  File "/tmp/Bazel.runfiles_ey3u9qv2/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 239, in <module>
+    app.run(main)
+  File "/tmp/Bazel.runfiles_ey3u9qv2/runfiles/absl_py/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "/tmp/Bazel.runfiles_ey3u9qv2/runfiles/absl_py/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "/tmp/Bazel.runfiles_ey3u9qv2/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 229, in main
+    make_examples_core.make_examples_runner(options)
+  File "/tmp/Bazel.runfiles_ey3u9qv2/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3412, in make_examples_runner
+    ) = processing_regions_from_options(options)
+  File "/tmp/Bazel.runfiles_ey3u9qv2/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3299, in processing_regions_from_options
+    ref_contigs = fasta.IndexedFastaReader(
+  File "/tmp/Bazel.runfiles_ey3u9qv2/runfiles/com_google_deepvariant/third_party/nucleus/io/fasta.py", line 106, in __init__
+    self._reader = reference.IndexedFastaReader.from_file(
+ValueError: NOT_FOUND: Failed to load FASTA file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta and/or index file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai. Please double check these files exist and are of the correct format.
+/tmp/Bazel.runfiles_mbrabg7e/runfiles/absl_py/absl/flags/_validators.py:233: UserWarning: Flag --mode has a non-None default value; therefore, mark_flag_as_required will pass even if flag is not specified in the command line!
+  mark_flag_as_required(flag_name, flag_values)
+I0414 23:19:18.025950 22789453557760 make_examples_core.py:3773] model.example_info filename: /opt/models/ont_r104/model.example_info.json
+I0414 23:19:18.026219 22789453557760 make_examples_core.py:3777] Reading flags_for_calling from /opt/models/ont_r104/model.example_info.json
+I0414 23:19:18.026560 22789453557760 make_examples_core.py:3794] Flags for calling:
+alt_aligned_pileup: rows
+call_small_model_examples: True
+max_reads_per_partition: 600
+min_mapping_quality: 1
+parse_sam_aux_fields: True
+partition_size: 25000
+phase_reads: True
+pileup_image_height: 100
+pileup_image_width: 99
+realign_reads: False
+small_model_indel_gq_threshold: 17
+small_model_snp_gq_threshold: 9
+small_model_vaf_context_window_size: 51
+sort_by_haplotypes: True
+track_ref_reads: True
+trained_small_model_path: /opt/smallmodels/ont_r104
+trim_reads_for_pileup: True
+vsc_min_fraction_indels: 0.1
+vsc_min_fraction_snps: 0.1
+min_base_quality: 1
+[E::idx_find_and_load] Could not retrieve index file for '/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam'
+I0414 23:19:18.043676 22789453557760 genomics_reader.py:223] Reading /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam with NativeSamReader
+W0414 23:19:18.043859 22789453557760 make_examples_core.py:464] No non-empty sample name found in the input reads. DeepVariant will use default as the sample name. You can also provide a sample name with the --sample_name argument.
+I0414 23:19:18.048872 22789453557760 dv_utils.py:333] From /opt/models/ont_r104/model.example_info.json: Shape of input examples: [300, 99, 8], Channels of input examples: [1, 2, 3, 4, 5, 6, 7, 25].
+W0414 23:19:18.049126 22789453557760 make_examples_options.py:1187] --parse_sam_aux_fields is deprecated. 
+    HP is parsed if --phase_reads=False and --sort_by_haplotypes, --reverse_haplotypes, or --hp_tag_for_assembly_polishing are set.
+    HP is parsed if --phase_reads=False and the 'haplotype' channel is requested.
+    HP is parsed if --output_phasing_error_stats is set.
+    OQ is parsed if --use_original_quality_scores is set.
+    MM, ML, MN are parsed if the "base_methylation" channel is requested or
+    if --enable_methylation_calling or if --enable_methylation_aware_phasing
+    is set.
+
+I0414 23:19:18.049216 22789453557760 make_examples_options.py:1204] Parsing AUX Fields: []
+I0414 23:19:18.059428 22789453557760 make_examples_core.py:367] Task 2/16: Preparing inputs
+[E::fai_load3_core] Failed to open FASTA index /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai: No such file or directory
+Traceback (most recent call last):
+  File "/tmp/Bazel.runfiles_mbrabg7e/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 239, in <module>
+    app.run(main)
+  File "/tmp/Bazel.runfiles_mbrabg7e/runfiles/absl_py/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "/tmp/Bazel.runfiles_mbrabg7e/runfiles/absl_py/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "/tmp/Bazel.runfiles_mbrabg7e/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 229, in main
+    make_examples_core.make_examples_runner(options)
+  File "/tmp/Bazel.runfiles_mbrabg7e/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3412, in make_examples_runner
+    ) = processing_regions_from_options(options)
+  File "/tmp/Bazel.runfiles_mbrabg7e/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3299, in processing_regions_from_options
+    ref_contigs = fasta.IndexedFastaReader(
+  File "/tmp/Bazel.runfiles_mbrabg7e/runfiles/com_google_deepvariant/third_party/nucleus/io/fasta.py", line 106, in __init__
+    self._reader = reference.IndexedFastaReader.from_file(
+ValueError: NOT_FOUND: Failed to load FASTA file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta and/or index file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai. Please double check these files exist and are of the correct format.
+/tmp/Bazel.runfiles_tw2ih9bo/runfiles/absl_py/absl/flags/_validators.py:233: UserWarning: Flag --mode has a non-None default value; therefore, mark_flag_as_required will pass even if flag is not specified in the command line!
+  mark_flag_as_required(flag_name, flag_values)
+I0414 23:19:18.034194 23164255412224 make_examples_core.py:3773] model.example_info filename: /opt/models/ont_r104/model.example_info.json
+I0414 23:19:18.034489 23164255412224 make_examples_core.py:3777] Reading flags_for_calling from /opt/models/ont_r104/model.example_info.json
+I0414 23:19:18.034855 23164255412224 make_examples_core.py:3794] Flags for calling:
+alt_aligned_pileup: rows
+call_small_model_examples: True
+max_reads_per_partition: 600
+min_mapping_quality: 1
+parse_sam_aux_fields: True
+partition_size: 25000
+phase_reads: True
+pileup_image_height: 100
+pileup_image_width: 99
+realign_reads: False
+small_model_indel_gq_threshold: 17
+small_model_snp_gq_threshold: 9
+small_model_vaf_context_window_size: 51
+sort_by_haplotypes: True
+track_ref_reads: True
+trained_small_model_path: /opt/smallmodels/ont_r104
+trim_reads_for_pileup: True
+vsc_min_fraction_indels: 0.1
+vsc_min_fraction_snps: 0.1
+min_base_quality: 1
+[E::idx_find_and_load] Could not retrieve index file for '/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam'
+I0414 23:19:18.051910 23164255412224 genomics_reader.py:223] Reading /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam with NativeSamReader
+W0414 23:19:18.052066 23164255412224 make_examples_core.py:464] No non-empty sample name found in the input reads. DeepVariant will use default as the sample name. You can also provide a sample name with the --sample_name argument.
+I0414 23:19:18.056801 23164255412224 dv_utils.py:333] From /opt/models/ont_r104/model.example_info.json: Shape of input examples: [300, 99, 8], Channels of input examples: [1, 2, 3, 4, 5, 6, 7, 25].
+W0414 23:19:18.057049 23164255412224 make_examples_options.py:1187] --parse_sam_aux_fields is deprecated. 
+    HP is parsed if --phase_reads=False and --sort_by_haplotypes, --reverse_haplotypes, or --hp_tag_for_assembly_polishing are set.
+    HP is parsed if --phase_reads=False and the 'haplotype' channel is requested.
+    HP is parsed if --output_phasing_error_stats is set.
+    OQ is parsed if --use_original_quality_scores is set.
+    MM, ML, MN are parsed if the "base_methylation" channel is requested or
+    if --enable_methylation_calling or if --enable_methylation_aware_phasing
+    is set.
+
+I0414 23:19:18.057118 23164255412224 make_examples_options.py:1204] Parsing AUX Fields: []
+/tmp/Bazel.runfiles_4j4z0t4z/runfiles/absl_py/absl/flags/_validators.py:233: UserWarning: Flag --mode has a non-None default value; therefore, mark_flag_as_required will pass even if flag is not specified in the command line!
+  mark_flag_as_required(flag_name, flag_values)
+I0414 23:19:17.954488 23114880602112 make_examples_core.py:3773] model.example_info filename: /opt/models/ont_r104/model.example_info.json
+I0414 23:19:17.954766 23114880602112 make_examples_core.py:3777] Reading flags_for_calling from /opt/models/ont_r104/model.example_info.json
+I0414 23:19:17.955491 23114880602112 make_examples_core.py:3794] Flags for calling:
+alt_aligned_pileup: rows
+call_small_model_examples: True
+max_reads_per_partition: 600
+min_mapping_quality: 1
+parse_sam_aux_fields: True
+partition_size: 25000
+phase_reads: True
+pileup_image_height: 100
+pileup_image_width: 99
+realign_reads: False
+small_model_indel_gq_threshold: 17
+small_model_snp_gq_threshold: 9
+small_model_vaf_context_window_size: 51
+sort_by_haplotypes: True
+track_ref_reads: True
+trained_small_model_path: /opt/smallmodels/ont_r104
+trim_reads_for_pileup: True
+vsc_min_fraction_indels: 0.1
+vsc_min_fraction_snps: 0.1
+min_base_quality: 1
+[E::idx_find_and_load] Could not retrieve index file for '/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam'
+I0414 23:19:17.972308 23114880602112 genomics_reader.py:223] Reading /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam with NativeSamReader
+W0414 23:19:17.972456 23114880602112 make_examples_core.py:464] No non-empty sample name found in the input reads. DeepVariant will use default as the sample name. You can also provide a sample name with the --sample_name argument.
+I0414 23:19:17.984470 23114880602112 dv_utils.py:333] From /opt/models/ont_r104/model.example_info.json: Shape of input examples: [300, 99, 8], Channels of input examples: [1, 2, 3, 4, 5, 6, 7, 25].
+W0414 23:19:17.984990 23114880602112 make_examples_options.py:1187] --parse_sam_aux_fields is deprecated. 
+    HP is parsed if --phase_reads=False and --sort_by_haplotypes, --reverse_haplotypes, or --hp_tag_for_assembly_polishing are set.
+    HP is parsed if --phase_reads=False and the 'haplotype' channel is requested.
+    HP is parsed if --output_phasing_error_stats is set.
+    OQ is parsed if --use_original_quality_scores is set.
+    MM, ML, MN are parsed if the "base_methylation" channel is requested or
+    if --enable_methylation_calling or if --enable_methylation_aware_phasing
+    is set.
+
+I0414 23:19:17.985089 23114880602112 make_examples_options.py:1204] Parsing AUX Fields: []
+I0414 23:19:17.994896 23114880602112 make_examples_core.py:367] Task 11/16: Preparing inputs
+[E::fai_load3_core] Failed to open FASTA index /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai: No such file or directory
+Traceback (most recent call last):
+  File "/tmp/Bazel.runfiles_4j4z0t4z/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 239, in <module>
+    app.run(main)
+  File "/tmp/Bazel.runfiles_4j4z0t4z/runfiles/absl_py/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "/tmp/Bazel.runfiles_4j4z0t4z/runfiles/absl_py/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "/tmp/Bazel.runfiles_4j4z0t4z/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 229, in main
+    make_examples_core.make_examples_runner(options)
+  File "/tmp/Bazel.runfiles_4j4z0t4z/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3412, in make_examples_runner
+    ) = processing_regions_from_options(options)
+  File "/tmp/Bazel.runfiles_4j4z0t4z/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3299, in processing_regions_from_options
+    ref_contigs = fasta.IndexedFastaReader(
+  File "/tmp/Bazel.runfiles_4j4z0t4z/runfiles/com_google_deepvariant/third_party/nucleus/io/fasta.py", line 106, in __init__
+    self._reader = reference.IndexedFastaReader.from_file(
+ValueError: NOT_FOUND: Failed to load FASTA file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta and/or index file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai. Please double check these files exist and are of the correct format.
+/tmp/Bazel.runfiles_iq4308j1/runfiles/absl_py/absl/flags/_validators.py:233: UserWarning: Flag --mode has a non-None default value; therefore, mark_flag_as_required will pass even if flag is not specified in the command line!
+  mark_flag_as_required(flag_name, flag_values)
+I0414 23:19:17.982827 23408754847744 make_examples_core.py:3773] model.example_info filename: /opt/models/ont_r104/model.example_info.json
+I0414 23:19:17.983083 23408754847744 make_examples_core.py:3777] Reading flags_for_calling from /opt/models/ont_r104/model.example_info.json
+I0414 23:19:17.983420 23408754847744 make_examples_core.py:3794] Flags for calling:
+alt_aligned_pileup: rows
+call_small_model_examples: True
+max_reads_per_partition: 600
+min_mapping_quality: 1
+parse_sam_aux_fields: True
+partition_size: 25000
+phase_reads: True
+pileup_image_height: 100
+pileup_image_width: 99
+realign_reads: False
+small_model_indel_gq_threshold: 17
+small_model_snp_gq_threshold: 9
+small_model_vaf_context_window_size: 51
+sort_by_haplotypes: True
+track_ref_reads: True
+trained_small_model_path: /opt/smallmodels/ont_r104
+trim_reads_for_pileup: True
+vsc_min_fraction_indels: 0.1
+vsc_min_fraction_snps: 0.1
+min_base_quality: 1
+[E::idx_find_and_load] Could not retrieve index file for '/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam'
+I0414 23:19:18.000346 23408754847744 genomics_reader.py:223] Reading /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam with NativeSamReader
+W0414 23:19:18.000494 23408754847744 make_examples_core.py:464] No non-empty sample name found in the input reads. DeepVariant will use default as the sample name. You can also provide a sample name with the --sample_name argument.
+I0414 23:19:18.005272 23408754847744 dv_utils.py:333] From /opt/models/ont_r104/model.example_info.json: Shape of input examples: [300, 99, 8], Channels of input examples: [1, 2, 3, 4, 5, 6, 7, 25].
+W0414 23:19:18.005529 23408754847744 make_examples_options.py:1187] --parse_sam_aux_fields is deprecated. 
+    HP is parsed if --phase_reads=False and --sort_by_haplotypes, --reverse_haplotypes, or --hp_tag_for_assembly_polishing are set.
+    HP is parsed if --phase_reads=False and the 'haplotype' channel is requested.
+    HP is parsed if --output_phasing_error_stats is set.
+    OQ is parsed if --use_original_quality_scores is set.
+    MM, ML, MN are parsed if the "base_methylation" channel is requested or
+    if --enable_methylation_calling or if --enable_methylation_aware_phasing
+    is set.
+
+I0414 23:19:18.005598 23408754847744 make_examples_options.py:1204] Parsing AUX Fields: []
+I0414 23:19:18.015881 23408754847744 make_examples_core.py:367] Task 0/16: Preparing inputs
+[E::fai_load3_core] Failed to open FASTA index /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai: No such file or directory
+Traceback (most recent call last):
+  File "/tmp/Bazel.runfiles_iq4308j1/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 239, in <module>
+    app.run(main)
+  File "/tmp/Bazel.runfiles_iq4308j1/runfiles/absl_py/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "/tmp/Bazel.runfiles_iq4308j1/runfiles/absl_py/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "/tmp/Bazel.runfiles_iq4308j1/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 229, in main
+    make_examples_core.make_examples_runner(options)
+  File "/tmp/Bazel.runfiles_iq4308j1/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3412, in make_examples_runner
+    ) = processing_regions_from_options(options)
+  File "/tmp/Bazel.runfiles_iq4308j1/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3299, in processing_regions_from_options
+    ref_contigs = fasta.IndexedFastaReader(
+  File "/tmp/Bazel.runfiles_iq4308j1/runfiles/com_google_deepvariant/third_party/nucleus/io/fasta.py", line 106, in __init__
+    self._reader = reference.IndexedFastaReader.from_file(
+ValueError: NOT_FOUND: Failed to load FASTA file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta and/or index file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai. Please double check these files exist and are of the correct format.
+/tmp/Bazel.runfiles_sn8n_e6j/runfiles/absl_py/absl/flags/_validators.py:233: UserWarning: Flag --mode has a non-None default value; therefore, mark_flag_as_required will pass even if flag is not specified in the command line!
+  mark_flag_as_required(flag_name, flag_values)
+I0414 23:19:18.040948 22699879743488 make_examples_core.py:3773] model.example_info filename: /opt/models/ont_r104/model.example_info.json
+I0414 23:19:18.041270 22699879743488 make_examples_core.py:3777] Reading flags_for_calling from /opt/models/ont_r104/model.example_info.json
+I0414 23:19:18.041707 22699879743488 make_examples_core.py:3794] Flags for calling:
+alt_aligned_pileup: rows
+call_small_model_examples: True
+max_reads_per_partition: 600
+min_mapping_quality: 1
+parse_sam_aux_fields: True
+partition_size: 25000
+phase_reads: True
+pileup_image_height: 100
+pileup_image_width: 99
+realign_reads: False
+small_model_indel_gq_threshold: 17
+small_model_snp_gq_threshold: 9
+small_model_vaf_context_window_size: 51
+sort_by_haplotypes: True
+track_ref_reads: True
+trained_small_model_path: /opt/smallmodels/ont_r104
+trim_reads_for_pileup: True
+vsc_min_fraction_indels: 0.1
+vsc_min_fraction_snps: 0.1
+min_base_quality: 1
+[E::idx_find_and_load] Could not retrieve index file for '/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam'
+I0414 23:19:18.058921 22699879743488 genomics_reader.py:223] Reading /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam with NativeSamReader
+W0414 23:19:18.059097 22699879743488 make_examples_core.py:464] No non-empty sample name found in the input reads. DeepVariant will use default as the sample name. You can also provide a sample name with the --sample_name argument.
+I0414 23:19:18.064189 22699879743488 dv_utils.py:333] From /opt/models/ont_r104/model.example_info.json: Shape of input examples: [300, 99, 8], Channels of input examples: [1, 2, 3, 4, 5, 6, 7, 25].
+W0414 23:19:18.064475 22699879743488 make_examples_options.py:1187] --parse_sam_aux_fields is deprecated. 
+    HP is parsed if --phase_reads=False and --sort_by_haplotypes, --reverse_haplotypes, or --hp_tag_for_assembly_polishing are set.
+    HP is parsed if --phase_reads=False and the 'haplotype' channel is requested.
+    HP is parsed if --output_phasing_error_stats is set.
+    OQ is parsed if --use_original_quality_scores is set.
+    MM, ML, MN are parsed if the "base_methylation" channel is requested or
+    if --enable_methylation_calling or if --enable_methylation_aware_phasing
+    is set.
+
+I0414 23:19:18.064547 22699879743488 make_examples_options.py:1204] Parsing AUX Fields: []
+/tmp/Bazel.runfiles_327qjzse/runfiles/absl_py/absl/flags/_validators.py:233: UserWarning: Flag --mode has a non-None default value; therefore, mark_flag_as_required will pass even if flag is not specified in the command line!
+  mark_flag_as_required(flag_name, flag_values)
+I0414 23:19:18.029174 22996526043136 make_examples_core.py:3773] model.example_info filename: /opt/models/ont_r104/model.example_info.json
+I0414 23:19:18.029468 22996526043136 make_examples_core.py:3777] Reading flags_for_calling from /opt/models/ont_r104/model.example_info.json
+I0414 23:19:18.029828 22996526043136 make_examples_core.py:3794] Flags for calling:
+alt_aligned_pileup: rows
+call_small_model_examples: True
+max_reads_per_partition: 600
+min_mapping_quality: 1
+parse_sam_aux_fields: True
+partition_size: 25000
+phase_reads: True
+pileup_image_height: 100
+pileup_image_width: 99
+realign_reads: False
+small_model_indel_gq_threshold: 17
+small_model_snp_gq_threshold: 9
+small_model_vaf_context_window_size: 51
+sort_by_haplotypes: True
+track_ref_reads: True
+trained_small_model_path: /opt/smallmodels/ont_r104
+trim_reads_for_pileup: True
+vsc_min_fraction_indels: 0.1
+vsc_min_fraction_snps: 0.1
+min_base_quality: 1
+[E::idx_find_and_load] Could not retrieve index file for '/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam'
+I0414 23:19:18.046677 22996526043136 genomics_reader.py:223] Reading /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam with NativeSamReader
+W0414 23:19:18.046865 22996526043136 make_examples_core.py:464] No non-empty sample name found in the input reads. DeepVariant will use default as the sample name. You can also provide a sample name with the --sample_name argument.
+I0414 23:19:18.051622 22996526043136 dv_utils.py:333] From /opt/models/ont_r104/model.example_info.json: Shape of input examples: [300, 99, 8], Channels of input examples: [1, 2, 3, 4, 5, 6, 7, 25].
+W0414 23:19:18.051892 22996526043136 make_examples_options.py:1187] --parse_sam_aux_fields is deprecated. 
+    HP is parsed if --phase_reads=False and --sort_by_haplotypes, --reverse_haplotypes, or --hp_tag_for_assembly_polishing are set.
+    HP is parsed if --phase_reads=False and the 'haplotype' channel is requested.
+    HP is parsed if --output_phasing_error_stats is set.
+    OQ is parsed if --use_original_quality_scores is set.
+    MM, ML, MN are parsed if the "base_methylation" channel is requested or
+    if --enable_methylation_calling or if --enable_methylation_aware_phasing
+    is set.
+
+I0414 23:19:18.051964 22996526043136 make_examples_options.py:1204] Parsing AUX Fields: []
+I0414 23:19:18.061479 22996526043136 make_examples_core.py:367] Task 1/16: Preparing inputs
+[E::fai_load3_core] Failed to open FASTA index /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai: No such file or directory
+Traceback (most recent call last):
+  File "/tmp/Bazel.runfiles_327qjzse/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 239, in <module>
+    app.run(main)
+  File "/tmp/Bazel.runfiles_327qjzse/runfiles/absl_py/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "/tmp/Bazel.runfiles_327qjzse/runfiles/absl_py/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "/tmp/Bazel.runfiles_327qjzse/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 229, in main
+    make_examples_core.make_examples_runner(options)
+  File "/tmp/Bazel.runfiles_327qjzse/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3412, in make_examples_runner
+    ) = processing_regions_from_options(options)
+  File "/tmp/Bazel.runfiles_327qjzse/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3299, in processing_regions_from_options
+    ref_contigs = fasta.IndexedFastaReader(
+  File "/tmp/Bazel.runfiles_327qjzse/runfiles/com_google_deepvariant/third_party/nucleus/io/fasta.py", line 106, in __init__
+    self._reader = reference.IndexedFastaReader.from_file(
+ValueError: NOT_FOUND: Failed to load FASTA file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta and/or index file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai. Please double check these files exist and are of the correct format.
+/tmp/Bazel.runfiles_04431nz3/runfiles/absl_py/absl/flags/_validators.py:233: UserWarning: Flag --mode has a non-None default value; therefore, mark_flag_as_required will pass even if flag is not specified in the command line!
+  mark_flag_as_required(flag_name, flag_values)
+I0414 23:19:17.980996 22468500086784 make_examples_core.py:3773] model.example_info filename: /opt/models/ont_r104/model.example_info.json
+I0414 23:19:17.981253 22468500086784 make_examples_core.py:3777] Reading flags_for_calling from /opt/models/ont_r104/model.example_info.json
+I0414 23:19:17.981611 22468500086784 make_examples_core.py:3794] Flags for calling:
+alt_aligned_pileup: rows
+call_small_model_examples: True
+max_reads_per_partition: 600
+min_mapping_quality: 1
+parse_sam_aux_fields: True
+partition_size: 25000
+phase_reads: True
+pileup_image_height: 100
+pileup_image_width: 99
+realign_reads: False
+small_model_indel_gq_threshold: 17
+small_model_snp_gq_threshold: 9
+small_model_vaf_context_window_size: 51
+sort_by_haplotypes: True
+track_ref_reads: True
+trained_small_model_path: /opt/smallmodels/ont_r104
+trim_reads_for_pileup: True
+vsc_min_fraction_indels: 0.1
+vsc_min_fraction_snps: 0.1
+min_base_quality: 1
+[E::idx_find_and_load] Could not retrieve index file for '/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam'
+I0414 23:19:17.998546 22468500086784 genomics_reader.py:223] Reading /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam with NativeSamReader
+W0414 23:19:17.998696 22468500086784 make_examples_core.py:464] No non-empty sample name found in the input reads. DeepVariant will use default as the sample name. You can also provide a sample name with the --sample_name argument.
+I0414 23:19:18.003386 22468500086784 dv_utils.py:333] From /opt/models/ont_r104/model.example_info.json: Shape of input examples: [300, 99, 8], Channels of input examples: [1, 2, 3, 4, 5, 6, 7, 25].
+W0414 23:19:18.003652 22468500086784 make_examples_options.py:1187] --parse_sam_aux_fields is deprecated. 
+    HP is parsed if --phase_reads=False and --sort_by_haplotypes, --reverse_haplotypes, or --hp_tag_for_assembly_polishing are set.
+    HP is parsed if --phase_reads=False and the 'haplotype' channel is requested.
+    HP is parsed if --output_phasing_error_stats is set.
+    OQ is parsed if --use_original_quality_scores is set.
+    MM, ML, MN are parsed if the "base_methylation" channel is requested or
+    if --enable_methylation_calling or if --enable_methylation_aware_phasing
+    is set.
+
+I0414 23:19:18.003724 22468500086784 make_examples_options.py:1204] Parsing AUX Fields: []
+I0414 23:19:18.013664 22468500086784 make_examples_core.py:367] Task 7/16: Preparing inputs
+[E::fai_load3_core] Failed to open FASTA index /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai: No such file or directory
+Traceback (most recent call last):
+  File "/tmp/Bazel.runfiles_04431nz3/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 239, in <module>
+    app.run(main)
+  File "/tmp/Bazel.runfiles_04431nz3/runfiles/absl_py/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "/tmp/Bazel.runfiles_04431nz3/runfiles/absl_py/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "/tmp/Bazel.runfiles_04431nz3/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 229, in main
+    make_examples_core.make_examples_runner(options)
+  File "/tmp/Bazel.runfiles_04431nz3/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3412, in make_examples_runner
+    ) = processing_regions_from_options(options)
+  File "/tmp/Bazel.runfiles_04431nz3/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3299, in processing_regions_from_options
+    ref_contigs = fasta.IndexedFastaReader(
+  File "/tmp/Bazel.runfiles_04431nz3/runfiles/com_google_deepvariant/third_party/nucleus/io/fasta.py", line 106, in __init__
+    self._reader = reference.IndexedFastaReader.from_file(
+ValueError: NOT_FOUND: Failed to load FASTA file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta and/or index file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai. Please double check these files exist and are of the correct format.
+/tmp/Bazel.runfiles_5o28t22y/runfiles/absl_py/absl/flags/_validators.py:233: UserWarning: Flag --mode has a non-None default value; therefore, mark_flag_as_required will pass even if flag is not specified in the command line!
+  mark_flag_as_required(flag_name, flag_values)
+I0414 23:19:17.956147 22662365302784 make_examples_core.py:3773] model.example_info filename: /opt/models/ont_r104/model.example_info.json
+I0414 23:19:17.956444 22662365302784 make_examples_core.py:3777] Reading flags_for_calling from /opt/models/ont_r104/model.example_info.json
+I0414 23:19:17.956845 22662365302784 make_examples_core.py:3794] Flags for calling:
+alt_aligned_pileup: rows
+call_small_model_examples: True
+max_reads_per_partition: 600
+min_mapping_quality: 1
+parse_sam_aux_fields: True
+partition_size: 25000
+phase_reads: True
+pileup_image_height: 100
+pileup_image_width: 99
+realign_reads: False
+small_model_indel_gq_threshold: 17
+small_model_snp_gq_threshold: 9
+small_model_vaf_context_window_size: 51
+sort_by_haplotypes: True
+track_ref_reads: True
+trained_small_model_path: /opt/smallmodels/ont_r104
+trim_reads_for_pileup: True
+vsc_min_fraction_indels: 0.1
+vsc_min_fraction_snps: 0.1
+min_base_quality: 1
+[E::idx_find_and_load] Could not retrieve index file for '/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam'
+I0414 23:19:17.974640 22662365302784 genomics_reader.py:223] Reading /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam with NativeSamReader
+W0414 23:19:17.974823 22662365302784 make_examples_core.py:464] No non-empty sample name found in the input reads. DeepVariant will use default as the sample name. You can also provide a sample name with the --sample_name argument.
+I0414 23:19:17.980776 22662365302784 dv_utils.py:333] From /opt/models/ont_r104/model.example_info.json: Shape of input examples: [300, 99, 8], Channels of input examples: [1, 2, 3, 4, 5, 6, 7, 25].
+W0414 23:19:17.981134 22662365302784 make_examples_options.py:1187] --parse_sam_aux_fields is deprecated. 
+    HP is parsed if --phase_reads=False and --sort_by_haplotypes, --reverse_haplotypes, or --hp_tag_for_assembly_polishing are set.
+    HP is parsed if --phase_reads=False and the 'haplotype' channel is requested.
+    HP is parsed if --output_phasing_error_stats is set.
+    OQ is parsed if --use_original_quality_scores is set.
+    MM, ML, MN are parsed if the "base_methylation" channel is requested or
+    if --enable_methylation_calling or if --enable_methylation_aware_phasing
+    is set.
+
+I0414 23:19:17.981222 22662365302784 make_examples_options.py:1204] Parsing AUX Fields: []
+I0414 23:19:17.990535 22662365302784 make_examples_core.py:367] Task 14/16: Preparing inputs
+[E::fai_load3_core] Failed to open FASTA index /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai: No such file or directory
+Traceback (most recent call last):
+  File "/tmp/Bazel.runfiles_5o28t22y/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 239, in <module>
+    app.run(main)
+  File "/tmp/Bazel.runfiles_5o28t22y/runfiles/absl_py/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "/tmp/Bazel.runfiles_5o28t22y/runfiles/absl_py/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "/tmp/Bazel.runfiles_5o28t22y/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 229, in main
+    make_examples_core.make_examples_runner(options)
+  File "/tmp/Bazel.runfiles_5o28t22y/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3412, in make_examples_runner
+    ) = processing_regions_from_options(options)
+  File "/tmp/Bazel.runfiles_5o28t22y/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3299, in processing_regions_from_options
+    ref_contigs = fasta.IndexedFastaReader(
+  File "/tmp/Bazel.runfiles_5o28t22y/runfiles/com_google_deepvariant/third_party/nucleus/io/fasta.py", line 106, in __init__
+    self._reader = reference.IndexedFastaReader.from_file(
+ValueError: NOT_FOUND: Failed to load FASTA file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta and/or index file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai. Please double check these files exist and are of the correct format.
+I0414 23:19:18.066449 23164255412224 make_examples_core.py:367] Task 3/16: Preparing inputs
+[E::fai_load3_core] Failed to open FASTA index /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai: No such file or directory
+Traceback (most recent call last):
+  File "/tmp/Bazel.runfiles_tw2ih9bo/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 239, in <module>
+    app.run(main)
+  File "/tmp/Bazel.runfiles_tw2ih9bo/runfiles/absl_py/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "/tmp/Bazel.runfiles_tw2ih9bo/runfiles/absl_py/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "/tmp/Bazel.runfiles_tw2ih9bo/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 229, in main
+    make_examples_core.make_examples_runner(options)
+  File "/tmp/Bazel.runfiles_tw2ih9bo/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3412, in make_examples_runner
+    ) = processing_regions_from_options(options)
+  File "/tmp/Bazel.runfiles_tw2ih9bo/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3299, in processing_regions_from_options
+    ref_contigs = fasta.IndexedFastaReader(
+  File "/tmp/Bazel.runfiles_tw2ih9bo/runfiles/com_google_deepvariant/third_party/nucleus/io/fasta.py", line 106, in __init__
+    self._reader = reference.IndexedFastaReader.from_file(
+ValueError: NOT_FOUND: Failed to load FASTA file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta and/or index file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai. Please double check these files exist and are of the correct format.
+/tmp/Bazel.runfiles_kj59qzli/runfiles/absl_py/absl/flags/_validators.py:233: UserWarning: Flag --mode has a non-None default value; therefore, mark_flag_as_required will pass even if flag is not specified in the command line!
+  mark_flag_as_required(flag_name, flag_values)
+I0414 23:19:18.110407 23090187902976 make_examples_core.py:3773] model.example_info filename: /opt/models/ont_r104/model.example_info.json
+I0414 23:19:18.110705 23090187902976 make_examples_core.py:3777] Reading flags_for_calling from /opt/models/ont_r104/model.example_info.json
+I0414 23:19:18.111118 23090187902976 make_examples_core.py:3794] Flags for calling:
+alt_aligned_pileup: rows
+call_small_model_examples: True
+max_reads_per_partition: 600
+min_mapping_quality: 1
+parse_sam_aux_fields: True
+partition_size: 25000
+phase_reads: True
+pileup_image_height: 100
+pileup_image_width: 99
+realign_reads: False
+small_model_indel_gq_threshold: 17
+small_model_snp_gq_threshold: 9
+small_model_vaf_context_window_size: 51
+sort_by_haplotypes: True
+track_ref_reads: True
+trained_small_model_path: /opt/smallmodels/ont_r104
+trim_reads_for_pileup: True
+vsc_min_fraction_indels: 0.1
+vsc_min_fraction_snps: 0.1
+min_base_quality: 1
+[E::idx_find_and_load] Could not retrieve index file for '/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam'
+I0414 23:19:18.128300 23090187902976 genomics_reader.py:223] Reading /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam with NativeSamReader
+W0414 23:19:18.128473 23090187902976 make_examples_core.py:464] No non-empty sample name found in the input reads. DeepVariant will use default as the sample name. You can also provide a sample name with the --sample_name argument.
+I0414 23:19:18.133505 23090187902976 dv_utils.py:333] From /opt/models/ont_r104/model.example_info.json: Shape of input examples: [300, 99, 8], Channels of input examples: [1, 2, 3, 4, 5, 6, 7, 25].
+W0414 23:19:18.133758 23090187902976 make_examples_options.py:1187] --parse_sam_aux_fields is deprecated. 
+    HP is parsed if --phase_reads=False and --sort_by_haplotypes, --reverse_haplotypes, or --hp_tag_for_assembly_polishing are set.
+    HP is parsed if --phase_reads=False and the 'haplotype' channel is requested.
+    HP is parsed if --output_phasing_error_stats is set.
+    OQ is parsed if --use_original_quality_scores is set.
+    MM, ML, MN are parsed if the "base_methylation" channel is requested or
+    if --enable_methylation_calling or if --enable_methylation_aware_phasing
+    is set.
+
+I0414 23:19:18.133841 23090187902976 make_examples_options.py:1204] Parsing AUX Fields: []
+I0414 23:19:18.144130 23090187902976 make_examples_core.py:367] Task 5/16: Preparing inputs
+[E::fai_load3_core] Failed to open FASTA index /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai: No such file or directory
+Traceback (most recent call last):
+  File "/tmp/Bazel.runfiles_kj59qzli/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 239, in <module>
+    app.run(main)
+  File "/tmp/Bazel.runfiles_kj59qzli/runfiles/absl_py/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "/tmp/Bazel.runfiles_kj59qzli/runfiles/absl_py/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "/tmp/Bazel.runfiles_kj59qzli/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 229, in main
+    make_examples_core.make_examples_runner(options)
+  File "/tmp/Bazel.runfiles_kj59qzli/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3412, in make_examples_runner
+    ) = processing_regions_from_options(options)
+  File "/tmp/Bazel.runfiles_kj59qzli/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3299, in processing_regions_from_options
+    ref_contigs = fasta.IndexedFastaReader(
+  File "/tmp/Bazel.runfiles_kj59qzli/runfiles/com_google_deepvariant/third_party/nucleus/io/fasta.py", line 106, in __init__
+    self._reader = reference.IndexedFastaReader.from_file(
+ValueError: NOT_FOUND: Failed to load FASTA file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta and/or index file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai. Please double check these files exist and are of the correct format.
+/tmp/Bazel.runfiles_kn59vlen/runfiles/absl_py/absl/flags/_validators.py:233: UserWarning: Flag --mode has a non-None default value; therefore, mark_flag_as_required will pass even if flag is not specified in the command line!
+  mark_flag_as_required(flag_name, flag_values)
+I0414 23:19:18.087734 23450634612736 make_examples_core.py:3773] model.example_info filename: /opt/models/ont_r104/model.example_info.json
+I0414 23:19:18.088071 23450634612736 make_examples_core.py:3777] Reading flags_for_calling from /opt/models/ont_r104/model.example_info.json
+I0414 23:19:18.088503 23450634612736 make_examples_core.py:3794] Flags for calling:
+alt_aligned_pileup: rows
+call_small_model_examples: True
+max_reads_per_partition: 600
+min_mapping_quality: 1
+parse_sam_aux_fields: True
+partition_size: 25000
+phase_reads: True
+pileup_image_height: 100
+pileup_image_width: 99
+realign_reads: False
+small_model_indel_gq_threshold: 17
+small_model_snp_gq_threshold: 9
+small_model_vaf_context_window_size: 51
+sort_by_haplotypes: True
+track_ref_reads: True
+trained_small_model_path: /opt/smallmodels/ont_r104
+trim_reads_for_pileup: True
+vsc_min_fraction_indels: 0.1
+vsc_min_fraction_snps: 0.1
+min_base_quality: 1
+[E::idx_find_and_load] Could not retrieve index file for '/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam'
+I0414 23:19:18.105603 23450634612736 genomics_reader.py:223] Reading /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam with NativeSamReader
+W0414 23:19:18.105777 23450634612736 make_examples_core.py:464] No non-empty sample name found in the input reads. DeepVariant will use default as the sample name. You can also provide a sample name with the --sample_name argument.
+I0414 23:19:18.111742 23450634612736 dv_utils.py:333] From /opt/models/ont_r104/model.example_info.json: Shape of input examples: [300, 99, 8], Channels of input examples: [1, 2, 3, 4, 5, 6, 7, 25].
+W0414 23:19:18.112040 23450634612736 make_examples_options.py:1187] --parse_sam_aux_fields is deprecated. 
+    HP is parsed if --phase_reads=False and --sort_by_haplotypes, --reverse_haplotypes, or --hp_tag_for_assembly_polishing are set.
+    HP is parsed if --phase_reads=False and the 'haplotype' channel is requested.
+    HP is parsed if --output_phasing_error_stats is set.
+    OQ is parsed if --use_original_quality_scores is set.
+    MM, ML, MN are parsed if the "base_methylation" channel is requested or
+    if --enable_methylation_calling or if --enable_methylation_aware_phasing
+    is set.
+
+I0414 23:19:18.112111 23450634612736 make_examples_options.py:1204] Parsing AUX Fields: []
+I0414 23:19:18.122330 23450634612736 make_examples_core.py:367] Task 4/16: Preparing inputs
+[E::fai_load3_core] Failed to open FASTA index /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai: No such file or directory
+Traceback (most recent call last):
+  File "/tmp/Bazel.runfiles_kn59vlen/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 239, in <module>
+    app.run(main)
+  File "/tmp/Bazel.runfiles_kn59vlen/runfiles/absl_py/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "/tmp/Bazel.runfiles_kn59vlen/runfiles/absl_py/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "/tmp/Bazel.runfiles_kn59vlen/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 229, in main
+    make_examples_core.make_examples_runner(options)
+  File "/tmp/Bazel.runfiles_kn59vlen/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3412, in make_examples_runner
+    ) = processing_regions_from_options(options)
+  File "/tmp/Bazel.runfiles_kn59vlen/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3299, in processing_regions_from_options
+    ref_contigs = fasta.IndexedFastaReader(
+  File "/tmp/Bazel.runfiles_kn59vlen/runfiles/com_google_deepvariant/third_party/nucleus/io/fasta.py", line 106, in __init__
+    self._reader = reference.IndexedFastaReader.from_file(
+ValueError: NOT_FOUND: Failed to load FASTA file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta and/or index file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai. Please double check these files exist and are of the correct format.
+I0414 23:19:18.074861 22699879743488 make_examples_core.py:367] Task 8/16: Preparing inputs
+[E::fai_load3_core] Failed to open FASTA index /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai: No such file or directory
+Traceback (most recent call last):
+  File "/tmp/Bazel.runfiles_sn8n_e6j/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 239, in <module>
+    app.run(main)
+  File "/tmp/Bazel.runfiles_sn8n_e6j/runfiles/absl_py/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "/tmp/Bazel.runfiles_sn8n_e6j/runfiles/absl_py/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "/tmp/Bazel.runfiles_sn8n_e6j/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 229, in main
+    make_examples_core.make_examples_runner(options)
+  File "/tmp/Bazel.runfiles_sn8n_e6j/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3412, in make_examples_runner
+    ) = processing_regions_from_options(options)
+  File "/tmp/Bazel.runfiles_sn8n_e6j/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3299, in processing_regions_from_options
+    ref_contigs = fasta.IndexedFastaReader(
+  File "/tmp/Bazel.runfiles_sn8n_e6j/runfiles/com_google_deepvariant/third_party/nucleus/io/fasta.py", line 106, in __init__
+    self._reader = reference.IndexedFastaReader.from_file(
+ValueError: NOT_FOUND: Failed to load FASTA file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta and/or index file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai. Please double check these files exist and are of the correct format.
+/tmp/Bazel.runfiles_p2uau46m/runfiles/absl_py/absl/flags/_validators.py:233: UserWarning: Flag --mode has a non-None default value; therefore, mark_flag_as_required will pass even if flag is not specified in the command line!
+  mark_flag_as_required(flag_name, flag_values)
+I0414 23:19:18.155224 23438376075264 make_examples_core.py:3773] model.example_info filename: /opt/models/ont_r104/model.example_info.json
+I0414 23:19:18.155523 23438376075264 make_examples_core.py:3777] Reading flags_for_calling from /opt/models/ont_r104/model.example_info.json
+I0414 23:19:18.155928 23438376075264 make_examples_core.py:3794] Flags for calling:
+alt_aligned_pileup: rows
+call_small_model_examples: True
+max_reads_per_partition: 600
+min_mapping_quality: 1
+parse_sam_aux_fields: True
+partition_size: 25000
+phase_reads: True
+pileup_image_height: 100
+pileup_image_width: 99
+realign_reads: False
+small_model_indel_gq_threshold: 17
+small_model_snp_gq_threshold: 9
+small_model_vaf_context_window_size: 51
+sort_by_haplotypes: True
+track_ref_reads: True
+trained_small_model_path: /opt/smallmodels/ont_r104
+trim_reads_for_pileup: True
+vsc_min_fraction_indels: 0.1
+vsc_min_fraction_snps: 0.1
+min_base_quality: 1
+[E::idx_find_and_load] Could not retrieve index file for '/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam'
+I0414 23:19:18.173094 23438376075264 genomics_reader.py:223] Reading /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam with NativeSamReader
+W0414 23:19:18.173293 23438376075264 make_examples_core.py:464] No non-empty sample name found in the input reads. DeepVariant will use default as the sample name. You can also provide a sample name with the --sample_name argument.
+I0414 23:19:18.178523 23438376075264 dv_utils.py:333] From /opt/models/ont_r104/model.example_info.json: Shape of input examples: [300, 99, 8], Channels of input examples: [1, 2, 3, 4, 5, 6, 7, 25].
+W0414 23:19:18.178819 23438376075264 make_examples_options.py:1187] --parse_sam_aux_fields is deprecated. 
+    HP is parsed if --phase_reads=False and --sort_by_haplotypes, --reverse_haplotypes, or --hp_tag_for_assembly_polishing are set.
+    HP is parsed if --phase_reads=False and the 'haplotype' channel is requested.
+    HP is parsed if --output_phasing_error_stats is set.
+    OQ is parsed if --use_original_quality_scores is set.
+    MM, ML, MN are parsed if the "base_methylation" channel is requested or
+    if --enable_methylation_calling or if --enable_methylation_aware_phasing
+    is set.
+
+I0414 23:19:18.178894 23438376075264 make_examples_options.py:1204] Parsing AUX Fields: []
+/tmp/Bazel.runfiles_ixnf3vu_/runfiles/absl_py/absl/flags/_validators.py:233: UserWarning: Flag --mode has a non-None default value; therefore, mark_flag_as_required will pass even if flag is not specified in the command line!
+  mark_flag_as_required(flag_name, flag_values)
+I0414 23:19:18.133130 22593133264896 make_examples_core.py:3773] model.example_info filename: /opt/models/ont_r104/model.example_info.json
+I0414 23:19:18.133462 22593133264896 make_examples_core.py:3777] Reading flags_for_calling from /opt/models/ont_r104/model.example_info.json
+I0414 23:19:18.133860 22593133264896 make_examples_core.py:3794] Flags for calling:
+alt_aligned_pileup: rows
+call_small_model_examples: True
+max_reads_per_partition: 600
+min_mapping_quality: 1
+parse_sam_aux_fields: True
+partition_size: 25000
+phase_reads: True
+pileup_image_height: 100
+pileup_image_width: 99
+realign_reads: False
+small_model_indel_gq_threshold: 17
+small_model_snp_gq_threshold: 9
+small_model_vaf_context_window_size: 51
+sort_by_haplotypes: True
+track_ref_reads: True
+trained_small_model_path: /opt/smallmodels/ont_r104
+trim_reads_for_pileup: True
+vsc_min_fraction_indels: 0.1
+vsc_min_fraction_snps: 0.1
+min_base_quality: 1
+[E::idx_find_and_load] Could not retrieve index file for '/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam'
+I0414 23:19:18.156145 22593133264896 genomics_reader.py:223] Reading /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam with NativeSamReader
+W0414 23:19:18.156571 22593133264896 make_examples_core.py:464] No non-empty sample name found in the input reads. DeepVariant will use default as the sample name. You can also provide a sample name with the --sample_name argument.
+I0414 23:19:18.162657 22593133264896 dv_utils.py:333] From /opt/models/ont_r104/model.example_info.json: Shape of input examples: [300, 99, 8], Channels of input examples: [1, 2, 3, 4, 5, 6, 7, 25].
+W0414 23:19:18.163001 22593133264896 make_examples_options.py:1187] --parse_sam_aux_fields is deprecated. 
+    HP is parsed if --phase_reads=False and --sort_by_haplotypes, --reverse_haplotypes, or --hp_tag_for_assembly_polishing are set.
+    HP is parsed if --phase_reads=False and the 'haplotype' channel is requested.
+    HP is parsed if --output_phasing_error_stats is set.
+    OQ is parsed if --use_original_quality_scores is set.
+    MM, ML, MN are parsed if the "base_methylation" channel is requested or
+    if --enable_methylation_calling or if --enable_methylation_aware_phasing
+    is set.
+
+I0414 23:19:18.163139 22593133264896 make_examples_options.py:1204] Parsing AUX Fields: []
+I0414 23:19:18.174534 22593133264896 make_examples_core.py:367] Task 12/16: Preparing inputs
+[E::fai_load3_core] Failed to open FASTA index /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai: No such file or directory
+Traceback (most recent call last):
+  File "/tmp/Bazel.runfiles_ixnf3vu_/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 239, in <module>
+    app.run(main)
+  File "/tmp/Bazel.runfiles_ixnf3vu_/runfiles/absl_py/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "/tmp/Bazel.runfiles_ixnf3vu_/runfiles/absl_py/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "/tmp/Bazel.runfiles_ixnf3vu_/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 229, in main
+    make_examples_core.make_examples_runner(options)
+  File "/tmp/Bazel.runfiles_ixnf3vu_/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3412, in make_examples_runner
+    ) = processing_regions_from_options(options)
+  File "/tmp/Bazel.runfiles_ixnf3vu_/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3299, in processing_regions_from_options
+    ref_contigs = fasta.IndexedFastaReader(
+  File "/tmp/Bazel.runfiles_ixnf3vu_/runfiles/com_google_deepvariant/third_party/nucleus/io/fasta.py", line 106, in __init__
+    self._reader = reference.IndexedFastaReader.from_file(
+ValueError: NOT_FOUND: Failed to load FASTA file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta and/or index file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai. Please double check these files exist and are of the correct format.
+/tmp/Bazel.runfiles_o1l3ylv3/runfiles/absl_py/absl/flags/_validators.py:233: UserWarning: Flag --mode has a non-None default value; therefore, mark_flag_as_required will pass even if flag is not specified in the command line!
+  mark_flag_as_required(flag_name, flag_values)
+I0414 23:19:18.225874 22473885814784 make_examples_core.py:3773] model.example_info filename: /opt/models/ont_r104/model.example_info.json
+I0414 23:19:18.226176 22473885814784 make_examples_core.py:3777] Reading flags_for_calling from /opt/models/ont_r104/model.example_info.json
+I0414 23:19:18.226587 22473885814784 make_examples_core.py:3794] Flags for calling:
+alt_aligned_pileup: rows
+call_small_model_examples: True
+max_reads_per_partition: 600
+min_mapping_quality: 1
+parse_sam_aux_fields: True
+partition_size: 25000
+phase_reads: True
+pileup_image_height: 100
+pileup_image_width: 99
+realign_reads: False
+small_model_indel_gq_threshold: 17
+small_model_snp_gq_threshold: 9
+small_model_vaf_context_window_size: 51
+sort_by_haplotypes: True
+track_ref_reads: True
+trained_small_model_path: /opt/smallmodels/ont_r104
+trim_reads_for_pileup: True
+vsc_min_fraction_indels: 0.1
+vsc_min_fraction_snps: 0.1
+min_base_quality: 1
+[E::idx_find_and_load] Could not retrieve index file for '/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam'
+I0414 23:19:18.189506 23438376075264 make_examples_core.py:367] Task 13/16: Preparing inputs
+[E::fai_load3_core] Failed to open FASTA index /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai: No such file or directory
+Traceback (most recent call last):
+  File "/tmp/Bazel.runfiles_p2uau46m/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 239, in <module>
+    app.run(main)
+  File "/tmp/Bazel.runfiles_p2uau46m/runfiles/absl_py/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "/tmp/Bazel.runfiles_p2uau46m/runfiles/absl_py/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "/tmp/Bazel.runfiles_p2uau46m/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 229, in main
+    make_examples_core.make_examples_runner(options)
+  File "/tmp/Bazel.runfiles_p2uau46m/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3412, in make_examples_runner
+    ) = processing_regions_from_options(options)
+  File "/tmp/Bazel.runfiles_p2uau46m/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3299, in processing_regions_from_options
+    ref_contigs = fasta.IndexedFastaReader(
+  File "/tmp/Bazel.runfiles_p2uau46m/runfiles/com_google_deepvariant/third_party/nucleus/io/fasta.py", line 106, in __init__
+    self._reader = reference.IndexedFastaReader.from_file(
+ValueError: NOT_FOUND: Failed to load FASTA file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta and/or index file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai. Please double check these files exist and are of the correct format.
+I0414 23:19:18.244547 22473885814784 genomics_reader.py:223] Reading /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam with NativeSamReader
+W0414 23:19:18.244742 22473885814784 make_examples_core.py:464] No non-empty sample name found in the input reads. DeepVariant will use default as the sample name. You can also provide a sample name with the --sample_name argument.
+I0414 23:19:18.250913 22473885814784 dv_utils.py:333] From /opt/models/ont_r104/model.example_info.json: Shape of input examples: [300, 99, 8], Channels of input examples: [1, 2, 3, 4, 5, 6, 7, 25].
+W0414 23:19:18.251213 22473885814784 make_examples_options.py:1187] --parse_sam_aux_fields is deprecated. 
+    HP is parsed if --phase_reads=False and --sort_by_haplotypes, --reverse_haplotypes, or --hp_tag_for_assembly_polishing are set.
+    HP is parsed if --phase_reads=False and the 'haplotype' channel is requested.
+    HP is parsed if --output_phasing_error_stats is set.
+    OQ is parsed if --use_original_quality_scores is set.
+    MM, ML, MN are parsed if the "base_methylation" channel is requested or
+    if --enable_methylation_calling or if --enable_methylation_aware_phasing
+    is set.
+
+I0414 23:19:18.251290 22473885814784 make_examples_options.py:1204] Parsing AUX Fields: []
+I0414 23:19:18.261380 22473885814784 make_examples_core.py:367] Task 15/16: Preparing inputs
+[E::fai_load3_core] Failed to open FASTA index /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai: No such file or directory
+Traceback (most recent call last):
+  File "/tmp/Bazel.runfiles_o1l3ylv3/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 239, in <module>
+    app.run(main)
+  File "/tmp/Bazel.runfiles_o1l3ylv3/runfiles/absl_py/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "/tmp/Bazel.runfiles_o1l3ylv3/runfiles/absl_py/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "/tmp/Bazel.runfiles_o1l3ylv3/runfiles/com_google_deepvariant/deepvariant/make_examples.py", line 229, in main
+    make_examples_core.make_examples_runner(options)
+  File "/tmp/Bazel.runfiles_o1l3ylv3/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3412, in make_examples_runner
+    ) = processing_regions_from_options(options)
+  File "/tmp/Bazel.runfiles_o1l3ylv3/runfiles/com_google_deepvariant/deepvariant/make_examples_core.py", line 3299, in processing_regions_from_options
+    ref_contigs = fasta.IndexedFastaReader(
+  File "/tmp/Bazel.runfiles_o1l3ylv3/runfiles/com_google_deepvariant/third_party/nucleus/io/fasta.py", line 106, in __init__
+    self._reader = reference.IndexedFastaReader.from_file(
+ValueError: NOT_FOUND: Failed to load FASTA file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta and/or index file /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta.fai. Please double check these files exist and are of the correct format.
+parallel: This job failed:
+/opt/deepvariant/bin/make_examples --mode calling --ref /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Dret_UK.fasta --reads /lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/input/Elska_vs_DretUK.sorted.bam --examples '/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/output/intermediate_results_dir/make_examples.tfrecord@16.gz' --checkpoint /opt/models/ont_r104 --gvcf '/lustre2/scratch/kcd88651/ticks/Dermacentor_Reticulatus/deepvariant/output/intermediate_results_dir/gvcf.tfrecord@16.gz' --task 10
+
+real	0m5.802s
+user	0m4.264s
+sys	0m1.371s
